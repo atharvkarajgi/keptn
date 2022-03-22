@@ -235,11 +235,11 @@ func BackupRestoreTestGeneric(t *testing.T, serviceUnderTestName string) {
 
 	//backup git-credentials
 
-	t.Logf("Executing backup of git-credentials")
-	secret, err := ExecuteCommandf("kubectl get secret -n %s git-credentials-%s -oyaml", keptnNamespace, projectName)
-	require.Nil(t, err)
-	err = os.WriteFile(secretFileName, []byte(secret), 0644)
-	require.Nil(t, err)
+	//t.Logf("Executing backup of git-credentials")
+	//secret, err := ExecuteCommandf("kubectl get secret -n %s git-credentials-%s -oyaml", keptnNamespace, projectName)
+	//require.Nil(t, err)
+	//err = os.WriteFile(secretFileName, []byte(secret), 0644)
+	//require.Nil(t, err)
 
 	if serviceUnderTestName == "resource-service" {
 		t.Logf("Deleting resource-service pod")
@@ -257,9 +257,9 @@ func BackupRestoreTestGeneric(t *testing.T, serviceUnderTestName string) {
 
 	//restore git-credentials
 
-	t.Logf("Executing restore of git-credentials")
-	_, err = ExecuteCommandf("kubectl apply -f %s -n %s", secretFileName, keptnNamespace)
-	require.Nil(t, err)
+	//t.Logf("Executing restore of git-credentials")
+	//_, err = ExecuteCommandf("kubectl apply -f %s -n %s", secretFileName, keptnNamespace)
+	//require.Nil(t, err)
 
 	//restore Configuration/Resource Service data
 
