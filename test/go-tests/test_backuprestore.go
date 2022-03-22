@@ -292,10 +292,10 @@ func BackupRestoreTestGeneric(t *testing.T, serviceUnderTestName string) {
 	require.Nil(t, err)
 
 	t.Logf("Sleeping for 15s...")
-	time.Sleep(15 * time.Second)
+	time.Sleep(50 * time.Second)
 	t.Logf("Continue to work...")
 
-	t.Logf("Trigger delivery after restore of helloservice:v0.1.0")
+	t.Logf("Trigger delivery after restore of helloservice:v0.1.1")
 	_, err = ExecuteCommandf("keptn trigger delivery --project=%s --service=%s --image=%s --tag=%s --sequence=%s", projectName, serviceName, "ghcr.io/podtato-head/podtatoserver", "v0.1.1", "delivery")
 	require.Nil(t, err)
 
