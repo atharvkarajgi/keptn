@@ -6,11 +6,11 @@ import (
 
 func Test_GKE(t *testing.T) {
 	// Common Tests
-	if res, err := CompareServiceNameWithDeploymentName("configuration-service", "configuration-service"); err == nil && res {
-		t.Run("Test_BackupRestore", Test_BackupRestoreConfigService)
-	} else {
-		t.Run("Test_BackupRestore", Test_BackupRestoreResourceService)
-	}
+	//if res, err := CompareServiceNameWithDeploymentName("configuration-service", "configuration-service"); err == nil && res {
+	t.Run("Test_BackupRestore", Test_BackupRestoreConfigService)
+	////} else {
+	//t.Run("Test_BackupRestore", Test_BackupRestoreResourceService)
+	////}
 	//t.Run("Test_GracefulShutdown", Test_GracefulShutdown)
 	//t.Run("Test_LogIngestion", Test_LogIngestion)
 	//t.Run("Test_LogForwarding", Test_LogForwarding)
